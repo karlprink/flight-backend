@@ -1,4 +1,4 @@
-package prink.flight.flightapi.domain;
+package prink.flight.flightapi.repository.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

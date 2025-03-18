@@ -2,8 +2,9 @@ package prink.flight.flightapi.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import prink.flight.flightapi.domain.Flight;
-import prink.flight.flightapi.domain.Seat;
+import prink.flight.flightapi.domain.FlightDTO;
+import prink.flight.flightapi.repository.entity.Flight;
+import prink.flight.flightapi.repository.entity.Seat;
 import prink.flight.flightapi.repository.FlightRepository;
 import prink.flight.flightapi.repository.SeatRepository;
 import prink.flight.flightapi.service.FlightService;
@@ -26,7 +27,7 @@ public class FlightController {
 
     // Kõikide lendude toomine (lihtne GET /api/flights)
     @GetMapping
-    public List<Flight> getAllFlights() {
+    public List<FlightDTO> getAllFlights() {
         return flightService.getFlights();
     }
 

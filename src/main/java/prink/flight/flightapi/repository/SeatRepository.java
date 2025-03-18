@@ -1,7 +1,7 @@
 package prink.flight.flightapi.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import prink.flight.flightapi.domain.Seat;
+import prink.flight.flightapi.repository.entity.Seat;
 
 import java.util.List;
 
