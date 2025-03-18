@@ -1,0 +1,10 @@
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5444/flightdb
+    username: admin
+    password: admin
+  jooq:
+    sql-dialect: POSTGRES

@@ -1,0 +1,12 @@
+name: flight-services
+
+services:
+  database:
+    image: postgres:17.0
+    container_name: database
+    environment:
+      - POSTGRES_DB=flightdb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5444:5432"
