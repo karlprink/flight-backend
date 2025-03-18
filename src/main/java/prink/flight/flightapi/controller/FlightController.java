@@ -1,13 +1,14 @@
 package prink.flight.flightapi.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import prink.flight.flightapi.domain.FlightDTO;
-import prink.flight.flightapi.repository.entity.Flight;
-import prink.flight.flightapi.repository.entity.Seat;
-import prink.flight.flightapi.repository.FlightRepository;
-import prink.flight.flightapi.repository.SeatRepository;
+import prink.flight.flightapi.domain.SeatDTO;
 import prink.flight.flightapi.service.FlightService;
+import prink.flight.flightapi.service.SeatService;
 
 import java.util.List;
 
@@ -16,13 +17,11 @@ import java.util.List;
 public class FlightController {
 
     private final FlightService flightService;
-    private final FlightRepository flightRepository;
-    private final SeatRepository seatRepository;
+    private final SeatService seatService;
 
-    public FlightController(FlightService flightService, FlightRepository flightRepository, SeatRepository seatRepository) {
+    public FlightController(FlightService flightService, SeatService seatService) {
         this.flightService = flightService;
-        this.flightRepository = flightRepository;
-        this.seatRepository = seatRepository;
+        this.seatService = seatService;
     }
 
     // Kõikide lendude toomine (lihtne GET /api/flights)
@@ -31,15 +30,9 @@ public class FlightController {
         return flightService.getFlights();
     }
 
-    // Lennu toomine ID järgi (GET /api/flights/{flightId})
-    @GetMapping("/{flightId}")
-    public ResponseEntity<Object> getFlightById(@PathVariable String flightId) {
-        Flight flight = flightService.getFlight(flightId);
-        return ResponseEntity.ok(flight);
+    @GetMapping("/{flightId}/seats")
+    public ResponseEntity<List<SeatDTO>> getSeatsByFlightId(@PathVariable Long flightId) {
+        List<SeatDTO> seats = seatService.getSeatsByFlightId(flightId);
+        return ResponseEntity.ok(seats);
     }
-    @GetMapping("/{SeatsByFlightId}")
-public List<Seat> getSeatsByFlightId(@PathVariable String SeatsByFlightId) {
-        Seat seat =
-        return seatRepository.findAllByFlightId(Long.parseLong(SeatsByFlightId));
-}
 }

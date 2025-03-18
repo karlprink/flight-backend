@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Seat {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,11 +20,11 @@ public class Seat {
     private boolean extraLegRoom;
     private boolean closeToExit;
     private double price;
-
     private boolean available;
 
+    public Seat() {
 
-
+    }
 
     public long getId() {
         return id;
@@ -102,6 +101,12 @@ public class Seat {
     public boolean isAvailable() {
         return available;
     }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+
     public Seat(long id, long flightId, String seatNumber, String seatClass, boolean isCloseToWindow, boolean isBusinessClass, boolean extraLegRoom, boolean closeToExit, double price, boolean available) {
         this.id = id;
         this.flightId = flightId;

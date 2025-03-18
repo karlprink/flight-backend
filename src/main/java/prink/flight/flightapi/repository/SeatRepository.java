@@ -6,5 +6,5 @@ import prink.flight.flightapi.repository.entity.Seat;
 import java.util.List;
 
 public interface SeatRepository extends JpaRepository<Seat, Integer> {
-    List<Seat> findAllByFlightId(long flightId);
+    List<Seat> findAllByFlightId(Long flightId);
 }
