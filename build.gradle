@@ -6,7 +6,15 @@ plugins {
 }
 
 group = 'prink.flight'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'prink.flight.flightapi.FlightApiApplication'
+        )
+    }
+}
 
 java {
     toolchain {
