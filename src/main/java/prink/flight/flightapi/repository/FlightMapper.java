@@ -4,6 +4,9 @@ import prink.flight.flightapi.domain.FlightDTO;
 import prink.flight.flightapi.domain.SeatDTO;
 import prink.flight.flightapi.repository.entity.Flight;
 import prink.flight.flightapi.repository.entity.Seat;
+/**
+ * FlightMapper klass vastutab Flight ja Seat entiteetide teisendamise eest DTO-deks ja vastupidi.
+ */
 
 public class FlightMapper {
 

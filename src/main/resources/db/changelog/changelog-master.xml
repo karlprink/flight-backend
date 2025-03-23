@@ -6,6 +6,8 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd">
 
 <!--    <include file="db/changelog/2025-03-13-2045-add-flights-table.sql"/>-->
-    <include file="db/changelog/2025-17-03-2025-1008-add-fligths.sql"/>
-    <include file="db/changelog/2025-03-17-1003-add-data-to-table.sql"/>
+<!--    <include file="/db/changelog/2025-03-17-2025-1008-add-fligths.sql"/>-->
+    <include file="db/changelog/2025-03-21-1405-add-seat-booking.sql"/>
+<!--    <include file="db/changelog/2025-03-17-1003-add-data-to-table.sql"/>-->
+    <include file="db/changelog/2025-03-22-1618-add-data-to-table.sql"/>
 </databaseChangeLog>

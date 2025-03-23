@@ -2,11 +2,14 @@ package prink.flight.flightapi.service;
 
 import org.springframework.stereotype.Component;
 import prink.flight.flightapi.domain.FlightDTO;
-import prink.flight.flightapi.repository.FlightAdapter;
+import prink.flight.flightapi.repository.adapter.FlightAdapter;
 
 import java.util.List;
+/**
+ * FlightService klass vastutab lennu andmete haldamise eest.
+ */
 
-@Component
+ @Component
 public class FlightService {
     private final FlightAdapter flightAdapter;
 
@@ -18,4 +21,7 @@ public class FlightService {
         return flightAdapter.findAll();
     }
 
+    public FlightDTO getFlightById(Long flightId) {
+        return flightAdapter.getFlightById(flightId);
+    }
 }
