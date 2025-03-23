@@ -26,3 +26,7 @@ Backend rakenduse saab käima panna dockeris. Selleks on vaja jooksutada root ka
 
 
 #### Autor: Karl Prink
+
+Backend https://github.com/karlprink/flight-backend
+
+Frontend https://github.com/karlprink/flight-frontend
